@@ -117,6 +117,6 @@ def multiply(number1, number2):
 def divide(number1, number2):
     result = "0"
     while number1 != "0":
-        substract(number1, number2)
+        number1 = substract(number1, number2)
         result = add_one(result)
     return(result)

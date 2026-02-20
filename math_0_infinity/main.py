@@ -47,7 +47,6 @@ def substract_one(s):
     else:
         result = rest + chr(ord(last) - 1)
 
-    # remove leading zeros
     result = result.lstrip('0')
     return result if result else '0'
 
@@ -74,6 +73,13 @@ def compare_smaller(n1, n2):
         return original_n1
     else:
         return original_n2
+
+# Check if inputed number is bigger than 10, if it isn't that means it must be a digit
+# Negative numbers aren't implemented yet
+def is_single_digit(n):
+    if compare_bigger(n, "9") == "9":
+        return True
+    return False
     
 # Add 2 numbers together. I included the `compare` function for performance
 def add(number1, number2):
@@ -107,9 +113,23 @@ def divide(number1, number2):
         result = add_one(result)
     return(result)
 
+# Better multiplication
+def multiply_optimized(n1, n2):
+    result = "0"
+    n1_factor = ""
+    n1_reversed = n1[::-1]
+    n2_reversed = n2[::-1]
+    for char_n1 in n1_reversed:
+        n2_factor = ""
+        for char_n2 in n2_reversed:
+            temp = multiply(char_n1, char_n2)
+            if temp != "0":
+                temp_result = temp + n1_factor + n2_factor
+                result = add(temp_result, result)
+            n2_factor += "0"
+        n1_factor += "0"
+    return result
+
 first = get_string("1: ")
 second = get_string("2: ")
-print(add(first, second))
-print(substract(first, second))
-print(multiply(first, second))
-print(divide(first, second))
+print(multiply_optimized(first, second))
