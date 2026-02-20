@@ -4,14 +4,60 @@ def error(message):
 
 # Check if the string is allowed
 def check_string(number):
-    if number.isdigit() == False:
-        error("Only numbers are allowed")
+    if number not in ["0","1","2","3","4","5","6","7","8","9"]:
+        error("Only allowed values are numbers 1-9")
 
 # Input() tailored for my usecase
 def get_string(prompt):
     string = input(prompt)
     check_string(string)
     return string
+
+# Add one
+def add_one(number):
+    if number == "0":
+        return "1"
+    elif number == "1":
+        return "2"
+    elif number == "2":
+        return "3"
+    elif number == "3":
+        return "4"
+    elif number == "4":
+        return "5"
+    elif number == "5":
+        return "6"
+    elif number == "6":
+        return "7"
+    elif number == "7":
+        return "8"
+    elif number == "8":
+        return "9"
+    elif number == "9":
+        error("The code was trying to add something to 9. You submited wrong numbers")
+
+# Substract one
+def substract_one(number):
+    if number == "0":
+        error("The code was trying to substract something from 0. You submited wrong numbers")
+    elif number == "1":
+        return "0"
+    elif number == "2":
+        return "1"
+    elif number == "3":
+        return "2"
+    elif number == "4":
+        return "3"
+    elif number == "5":
+        return "4"
+    elif number == "6":
+        return "5"
+    elif number == "7":
+        return "6"
+    elif number == "8":
+        return "7"
+    elif number == "9":
+        return "8"
 
 # This function doesn't actually count. It creates a list, to use in `for` loops
 def count(number):
@@ -20,36 +66,6 @@ def count(number):
         number = substract_one(number)
         result.append(number)
     return result
-
-# Add one
-def add_one(s):
-    if not s:
-        return "1"
-    
-    last = s[-1]
-    rest = s[:-1]
-    if last == '9':
-        return add_one(rest) + '0'
-    else:
-        return rest + chr(ord(last) + 1)
-    
-# Substract one
-def substract_one(s):
-    if s == "0":
-        error("The code was trying to substract something from 0. You submited wrong numbers")
-    
-    last = s[-1]
-    rest = s[:-1]
-
-    if last == '0':
-        new_rest = substract_one(rest) if rest else ''
-        result = new_rest + '9'
-    else:
-        result = rest + chr(ord(last) - 1)
-
-    # remove leading zeros
-    result = result.lstrip('0')
-    return result if result else '0'
 
 # Compare the numbers and output the bigger one
 def compare_bigger(n1, n2):
@@ -99,8 +115,6 @@ def multiply(number1, number2):
 
 # Divide 2 numbers. Yes, the cryptic error messeges are intended
 def divide(number1, number2):
-    if number2 == "0":
-        error("The code was trying to divide something by 0. You submited wrong numbers")
     result = "0"
     while number1 != "0":
         substract(number1, number2)
