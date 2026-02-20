@@ -4,7 +4,7 @@ def error(message):
 
 # Check if the string is allowed
 def check_string(number):
-    if number not in ["1","2","3","4","5","6","7","8","9"]:
+    if number not in ["0","1","2","3","4","5","6","7","8","9"]:
         error("Only allowed values are numbers 1-9")
 
 # Input() tailored for my usecase
@@ -79,7 +79,7 @@ def compare_bigger(n1, n2):
     else:
         return original_n1
 
-# Compare the numbers and output the bigger one    
+# Compare the numbers and output the smaller one    
 def compare_smaller(n1, n2):
     original_n1 = n1
     original_n2 = n2
