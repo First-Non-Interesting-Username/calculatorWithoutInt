@@ -103,6 +103,13 @@ def divide(number1, number2):
         error("The code was trying to divide something by 0. You submited wrong numbers")
     result = "0"
     while number1 != "0":
-        substract(number1, number2)
+        number1 = substract(number1, number2)
         result = add_one(result)
     return(result)
+
+first = get_string("1: ")
+second = get_string("2: ")
+print(add(first, second))
+print(substract(first, second))
+print(multiply(first, second))
+print(divide(first, second))
