@@ -50,6 +50,10 @@ def substract_one(s):
     result = result.lstrip('0')
     return result if result else '0'
 
+# Reverse string (or number)
+def reverse(string):
+    return string[::-1]
+
 # Compare the numbers and output the bigger one
 def compare_bigger(n1, n2):
     original_n1 = n1
@@ -113,23 +117,47 @@ def divide(number1, number2):
         result = add_one(result)
     return(result)
 
+def safe_index(s, i):
+    try:
+        return s[i]
+    except IndexError:
+        return "0"
+
+def add_optimized(n1, n2):
+    if not n1 and not n2: 
+        return ""
+    last_n1 = safe_index(n1, -1)
+    rest_n1 = n1[:-1]
+    last_n2 = safe_index(n2, -1)
+    rest_n2 = n2[:-1]
+    last = add(last_n1, last_n2)
+    if is_single_digit(last) == False:
+        last = last[1:]
+        rest_n1 = add_one(rest_n1)
+    result = add_optimized(rest_n1, rest_n2) + last
+    return result
+
 # Better multiplication
 def multiply_optimized(n1, n2):
     result = "0"
     n1_factor = ""
-    n1_reversed = n1[::-1]
-    n2_reversed = n2[::-1]
+    n1_reversed = reverse(n1)
+    n2_reversed = reverse(n2)
     for char_n1 in n1_reversed:
         n2_factor = ""
         for char_n2 in n2_reversed:
             temp = multiply(char_n1, char_n2)
             if temp != "0":
                 temp_result = temp + n1_factor + n2_factor
-                result = add(temp_result, result)
+                result = add_optimized(temp_result, result)
             n2_factor += "0"
         n1_factor += "0"
     return result
 
+
+        
+
+
 first = get_string("1: ")
 second = get_string("2: ")
-print(multiply_optimized(first, second))
+print(multiply(first, second))
