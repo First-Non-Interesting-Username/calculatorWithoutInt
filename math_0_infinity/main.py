@@ -25,7 +25,6 @@ def count(number):
 def add_one(s):
     if not s:
         return "1"
-    
     last = s[-1]
     rest = s[:-1]
     if last == '9':
@@ -37,10 +36,8 @@ def add_one(s):
 def substract_one(s):
     if s == "0":
         error("The code was trying to substract something from 0. You submited wrong numbers")
-    
     last = s[-1]
     rest = s[:-1]
-
     if last == '0':
         new_rest = substract_one(rest) if rest else ''
         result = new_rest + '9'
@@ -117,12 +114,14 @@ def divide(number1, number2):
         result = add_one(result)
     return(result)
 
+# Safe index, so you won't get index errors when adding 2 number with different lengths 
 def safe_index(s, i):
     try:
         return s[i]
     except IndexError:
         return "0"
 
+# Better addition
 def add_optimized(n1, n2):
     if not n1 and not n2: 
         return ""
@@ -136,6 +135,23 @@ def add_optimized(n1, n2):
         rest_n1 = add_one(rest_n1)
     result = add_optimized(rest_n1, rest_n2) + last
     return result
+
+# Better substraction
+def substract_optimized(n1, n2):
+    n2 = n2 or "0"
+    n1 = n1 or "0"
+    if n2 == "0":
+        return n1.lstrip("0") or "0"
+    last_n1 = safe_index(n1, -1)
+    rest_n1 = n1[:-1] or "0"
+    last_n2 = safe_index(n2, -1)
+    rest_n2 = n2[:-1]
+    if compare_bigger(last_n1, last_n2) == last_n2 and last_n1 != last_n2:
+        last_n1 = "1" + last_n1
+        rest_n1 = substract_one(rest_n1)
+    last = substract(last_n1, last_n2)
+    result = substract_optimized(rest_n1, rest_n2) + last
+    return result.lstrip("0") or "0"
 
 # Better multiplication
 def multiply_optimized(n1, n2):
@@ -160,4 +176,4 @@ def multiply_optimized(n1, n2):
 
 first = get_string("1: ")
 second = get_string("2: ")
-print(multiply(first, second))
+print(substract_optimized(first, second))
