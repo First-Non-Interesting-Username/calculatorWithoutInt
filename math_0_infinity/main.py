@@ -170,10 +170,16 @@ def multiply_optimized(n1, n2):
         n1_factor += "0"
     return result
 
+# Exponentiation, first number is a base and the second is an exponent
+def power(number, factor):
+    result = "1"
+    for x in count(factor):
+        result = multiply_optimized(number, result)
+    return result
 
         
 
 
 first = get_string("1: ")
 second = get_string("2: ")
-print(substract_optimized(first, second))
+print(power(first, second))
