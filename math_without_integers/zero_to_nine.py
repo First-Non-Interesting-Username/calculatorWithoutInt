@@ -7,7 +7,7 @@ def check_string(number):
     if number not in ["0","1","2","3","4","5","6","7","8","9"]:
         error("Only allowed values are numbers 1-9")
 
-# Input() tailored for my usecase
+# input() tailored for my usecase
 def get_string(prompt):
     string = input(prompt)
     check_string(string)
