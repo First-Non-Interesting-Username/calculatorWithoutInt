@@ -1,6 +1,6 @@
 # Installation
 
-To install the pypi package, run:
+To install the package from pypi, run:
 
 ```bash
 pip install math_without_integers
@@ -16,19 +16,3 @@ from math_without_integers import zero_to_infinity
 ```
 
 at the top of your python code.
-
-# Usage of each function
-
-## zero_to_infinity.
-
-### Usage
-
-```python
-zero_to_infinity.
-```
-
-### Complexity
-
-O()
-
-`END`
