@@ -184,9 +184,3 @@ def factorial(big_number):
     for number in count(big_number):
         result = multiply_optimized(result, number)
     return result
-        
-
-
-first = get_string("1: ")
-second = get_string("2: ")
-print(factorial(first))
