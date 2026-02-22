@@ -15,8 +15,9 @@ def get_string(prompt):
 
 # This function doesn't actually count. It creates a list, to use in `for` loops
 def count(number):
+    number = add_one(number)
     result = []
-    while number != "0":
+    while number != "1":
         number = substract_one(number)
         result.append(number)
     return result
@@ -177,9 +178,15 @@ def power(number, factor):
         result = multiply_optimized(number, result)
     return result
 
+# Returns the factorial of the number, simple as that
+def factorial(big_number):
+    result = "1"
+    for number in count(big_number):
+        result = multiply_optimized(result, number)
+    return result
         
 
 
 first = get_string("1: ")
 second = get_string("2: ")
-print(power(first, second))
+print(factorial(first))
