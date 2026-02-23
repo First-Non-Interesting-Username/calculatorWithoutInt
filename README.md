@@ -19,4 +19,5 @@ at the top of your python code.
 
 ## Docs
 [zero_to_nine](math_without_integers/zero_to_nine.md)
+
 [zero_to_infinity](math_without_integers/zero_to_infinity.md)
