@@ -20,11 +20,11 @@ print("Use numbers of however length you feel like, I suggest somewhere between 
 n1 = zero_to_infinity.get_string("Input the first number: ")
 n2 = zero_to_infinity.get_string("Input the second number: ")
 
-print("I will use 1 000 for unoptimized multiplication, 1 000 000 for addition and substraction and your numbers for optimized ones")
+print("I will use 1 000 for unoptimized multiplication, 5 000 000 for addition and your numbers for optimized ones")
 print("Let's see what will be quicker")
 
 print("Multiplication 1 000 * 1 000 : ", zero_to_infinity.multiply("1000", "1000"))
 print("Optimized multiplication", n1, "*", n2, ":", zero_to_infinity.multiply_optimized(n1, n2))
 
-print("Addition 1 000 000 + 1 000 000 : ", zero_to_infinity.add("1000000", "1000000"))
+print("Addition 5 000 000 + 5 000 000 : ", zero_to_infinity.add("5000000", "5000000"))
 print("Optimized addition", n1, "+", n2, ":", zero_to_infinity.add_optimized(n1, n2))
