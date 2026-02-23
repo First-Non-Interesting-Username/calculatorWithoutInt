@@ -278,4 +278,4 @@ Returns the factorial of the number, this function gets really slow for big numb
 
 ### Complexity
 
-`O(n*d²*d_result)`, where n is the value of number, d is the length of it numbers and d_result is length of the result
+`O(n*d*d*d_result)`, where n is the value of number, d is the length of it numbers and d_result is length of the result
