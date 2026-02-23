@@ -1,4 +1,18 @@
+# General usage tips
+
+- Remember to not input actual numbers, you can use `zero_to_infinity.check_string()` to check if input is a elegible number.
+- When taking inputs from user, you should use `zero_to_infinity.get_string()` or at least check the string before using it in the code.
+- The unoptimized functions get really slow for numbers bigger than around millions. Use optimized functions when possible. 
+
+## [Example program](example_zero_to_infinity.py)
+
 # Usage of each function
+
+## Terminology
+
+Number - string representing a number
+
+d (in case of complexity calculations) - length
 
 ## zero_to_infinity.error()
 

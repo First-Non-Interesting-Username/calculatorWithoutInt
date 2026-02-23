@@ -1,4 +1,19 @@
+# General usage tips
+
+- Remember to not input actual numbers, you can use `zero_to_nine.check_string()` to check if input is a elegible number.
+- When taking inputs from user, you should use `zero_to_nine.get_string()` or at least check the string before using it in the code.
+- This is an early version of the library. It's reccommended to use zero_to_infinity version.
+
+## [Example program](example_zero_to_nine.py)
+
 # Usage of each function
+
+## Terminology
+
+Number - string representing a number
+
+d (in case of complexity calculations) - length
+
 
 ## zero_to_nine.error()
 

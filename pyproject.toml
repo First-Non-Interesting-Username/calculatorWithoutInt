@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "math_without_integers"
-version = "0.1.0"
+version = "0.1.1"
 description = "Arithmetic operations without using integers at all"
 readme = "README.md"
 requires-python = ">=3.6"
@@ -12,3 +12,6 @@ license = {text = "AGPL-3.0"}
 authors = [
   {name = "First-Non-Interesting-Username", email = "janekmusin@proton.me"}
 ]
+
+[project.urls]
+Source = "https://github.com/First-Non-Interesting-Username/calculatorWithoutInt"
